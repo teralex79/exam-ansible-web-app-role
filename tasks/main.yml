@@ -1,21 +1,27 @@
 ---
 # tasks file for roles/web-app
 
-- name: Run role Install Docker 
+- name: Run role Install Docker. 
   include_role:
     name: docker
 
-- name: Log into private registry and force re-authorization
+- name: Login to dockerhub.
+# and force re-authorization.
   docker_login:
-#    registry: teralex79/devops_exam
     username: teralex79
     password: gldpSi_2002
-    reauthorize: yes
+#    reauthorize: yes
 
-- name: pull an image
+- name: Pull an image.
   docker_image:
-    name: teralex79/devops_exam:latest 
+    name: teralex79/devops_exam
 
-- name: pull a test docker image
-  docker_image: 
-    name: hello-world    
+- name: Run web container.
+  docker_container:
+    name: web_app
+    hostname: web_app
+    ports:
+      5001:5000
+    image: teralex79/devops_exam
+    state: started
+    
