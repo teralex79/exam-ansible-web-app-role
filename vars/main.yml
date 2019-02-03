@@ -1,0 +1,14 @@
+---
+# vars file for roles/web-app
+
+str_var: "Test string"
+
+list var:
+  - name: Test1
+  - name: Test2
+
+dict_var:
+
+   test1: "Dictinary test1"
+   test2: "Dictinary test2"
+
