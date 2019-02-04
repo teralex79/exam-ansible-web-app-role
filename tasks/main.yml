@@ -8,8 +8,8 @@
 - name: Login to dockerhub.
 # and force re-authorization.
   docker_login:
-    username: teralex79
-    password: gldpSi_2002
+    username: "{{ dockerhub_username }}" 
+    password: "{{ dockerhub_password }}"  
 #    reauthorize: yes
 
 - name: Pull an image.
