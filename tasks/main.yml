@@ -21,7 +21,7 @@
     name: "{{ docker_name }}" 
     hostname: "{{ docker_name }}"
     ports:
-      5001:5000
+      "{{ docker_app_port }}:5000"
     image: teralex79/devops_exam
     state: started
     
