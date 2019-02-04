@@ -18,8 +18,8 @@
 
 - name: Run web container.
   docker_container:
-    name: web_app
-    hostname: web_app
+    name: "{{ docker_name }}" 
+    hostname: "{{ docker_name }}"
     ports:
       5001:5000
     image: teralex79/devops_exam
