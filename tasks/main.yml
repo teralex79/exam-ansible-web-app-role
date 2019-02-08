@@ -1,15 +1,15 @@
 ---
 # tasks file for roles/web-app
-
-- name: Run role Install Docker. 
+ 
+- name: Run role Install Docker.
   include_role:
     name: docker
 
 - name: Login to dockerhub.
 # and force re-authorization.
   docker_login:
-    username: "{{ dockerhub_username }}" 
-    password: "{{ dockerhub_password }}"  
+    username: "{{ dockerhub_username }}"
+    password: "{{ dockerhub_password }}"
 #    reauthorize: yes
 
 - name: Pull an image.
@@ -18,10 +18,9 @@
 
 - name: Run web container.
   docker_container:
-    name: "{{ docker_name }}" 
+    name: "{{ docker_name }}"
     hostname: "{{ docker_name }}"
     ports:
       "{{ docker_app_port }}:5000"
     image: teralex79/devops_exam
     state: started
-    
