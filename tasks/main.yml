@@ -1,6 +1,6 @@
 ---
 # tasks file for roles/web-app
- 
+
 - name: Run role Install Docker.
   include_role:
     name: docker
